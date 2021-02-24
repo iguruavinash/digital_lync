@@ -1,0 +1,52 @@
+a{
+    text-decoration: none;
+    padding: 10px;
+}
+.material-icons{
+    padding: 10px 0 10px 10px;
+}
+button{
+    border: none;
+}
+#banner_image{
+    padding-top: 75px;
+    padding-bottom: 50px;
+    text-align: center;
+    color: #f8f8f8;
+    height: 100vh;
+    background: url(images/intro-bg_1.jpg) no-repeat center center;
+    background-size: cover;
+}
+.fixed-bottom{
+    
+    background-color: #101010;
+    color:#9d9d9d;
+    /* min-height: 20px; */
+    /* width: 100%; */
+    /* margin-top: auto; */
+    /* height: 200px; */
+    /* clear: both; */
+    /* display: flex; */
+    /* position: relative; */
+}
+#banner_content{
+    position: relative;
+    padding-top: 6%;
+    padding-bottom: 6%;
+    margin-top: 12%;
+    margin-bottom: 12%;
+    background-color: rgba(0, 0, 0, 0.7);
+    max-width: 660px;
+    text-align: center;
+}
+.jumbotron{
+    background-color: lightgray;
+    padding-top: 10px;
+}
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+table{
+    empty-cells: show;
+}
