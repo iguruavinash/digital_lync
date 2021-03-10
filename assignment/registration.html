@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta2-dist/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="container" style="padding: 20px; max-width: 500px;">
+        <div class="mb-3">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstName">
+        </div>
+        <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastName">
+        </div>
+        <div class="mb-3">
+            <label for="city" class="form-label">City</label>
+            <select id="city" class="form-select">
+                <option selected>Choose...</option>
+                <option>Madhapur</option>
+                <option>Hi-tech City</option>
+                <option>Gachibowli</option>
+                <option>Koti</option>
+            </select><br>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password">
+            </div>
+            <div id="errorMsg">
+
+            </div>
+            
+            <button type="submit" class="btn btn-primary" onclick="loginUser()">Submit</button>
+        </div>
+        <script>
+            
+            var users = [
+                {
+                    firstName: 'guru',
+                    lastName: 'avinash',
+                    city: 'Madhapur',
+                    email: 'guru@gmail.com',
+                    password: 'guru123'
+                },
+                {
+                    firstName: 'uday',
+                    lastName: 'shekhar',
+                    city: 'Hi-tech City',
+                    email: 'uday@gmail.com',
+                    password: 'uday123'
+                },
+                {
+                    firstName: 'day',
+                    lastName: 'dreams',
+                    city: 'Gachibowli',
+                    email: 'daydreams@gmail.com',
+                    password: 'dreams123'
+                }
+            ]
+
+
+            function loginUser() {
+                var firstName = document.getElementById('firstName').value;
+                var lastName = document.getElementById('lastName').value;
+                var city = document.getElementById('city').value;
+                var email = document.getElementById('email').value;
+                var password = document.getElementById('password').value;
+                var isPresent = false;
+                if (firstName === users[0].firstName && lastName === users[0].lastName && city === users[0].city && email === users[0].email && password === users[0].password) {
+                    isPresent = true;
+                } else if (firstName === users[1].firstName && lastName === users[1].lastName && city === users[1].city && email === users[1].email && password === users[1].password) {
+                    isPresent = true;
+                } else if (firstName === users[2].firstName && lastName === users[2].lastName && city === users[2].city && email === users[2].email && password === users[2].password) {
+                    isPresent = true;
+                }
+
+                if (isPresent) {
+                    window.location.href = 'welcome.html'
+                } else {
+                    document.getElementById('errorMsg').innerHTML = "Incorrect Details";
+                }
+                localStorage.setItem('user', JSON.stringify(users));
+                user.push(users);
+                // sessionStorage.setItem('user', JSON.stringify(users));
+                // user.push(users);
+                var showData = localStorage.getItem('user');
+
+                // console.log(showUser);
+            }
+        </script>
+</body>
+
+</html>
