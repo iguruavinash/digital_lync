@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DropDown</title>
+    <!-- <link rel="stylesheet" href="bootstrap-5.0.0-beta2-dist/css/bootstrap.css"> -->
+</head>
+
+<body>
+
+    <!-- <div class="container">
+    <div class="row">
+        <div class="col">
+            <div id="addItem"></div>
+        </div>
+
+        <div class="col">
+
+        </div>
+    </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="mobilePhones">
+        <select id="mySelect" onchange="myFunction()">
+            <option selected>Click for Mobiles...</option>
+            <option value="Redmi">Redmi</option>
+            <option value="Nokia">Nokia</option>
+            <option value="Microsoft">Microsoft</option>
+            <option value="Moto">Moto</option>
+        </select>
+    </div>
+    <h1 id="show"></h1>
+    <div id="myDiv"></div>
+    <div class="input-group">
+        <input type="text" class="form-control" id="addMobile">
+    </div>
+
+    <script>
+        mySelect.style.fontSize = '20px';
+        mobilePhones.style.textAlign = "center"
+        show.style.textAlign = "center"
+
+        function myFunction() {
+            var mobiles = document.getElementById("mySelect").value;
+            document.getElementById("show").innerHTML = "You Selected: " + mobiles;
+        }
+
+        var button1 = document.createElement('button');
+        var text = document.createTextNode('Add');
+        button1.appendChild(text);
+        myDiv.appendChild(button1);
+        button1.setAttribute('id', 'addItem');
+        button1.style.fontSize = '30px';
+        document.getElementById('addItem').style.color = 'red';
+
+
+        function addItem() {
+            var select = document.getElementById("mySelect");
+            var addMobile = document.getElementById("addMobile");
+            var option = document.createElement("option");
+            option.setAttribute('id', addMobile.value);
+            option.appendChild(document.createTextNode(addMobile.value));
+            select.appendChild(option);
+        }
+
+        var button2 = document.createElement('button');
+        var text = document.createTextNode('Delete');
+        button2.appendChild(text);
+        myDiv.appendChild(button2);
+        button2.setAttribute('id', 'removeItem');
+        button2.style.fontSize = '15px';
+
+
+        function removeItem() {
+            var option = document.getElementById("nySelect");
+            var addMobile = document.getElementById("addMobile");
+            var item = document.getElementById(addMobile.value);
+            option.removeChild(item);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validations</title>
+</head>
+
+<body>
+    <p id='message'></p>
+    <form onsubmit="return verifyPassword()">
+        <label for="password">Password: </label>
+        <input type="password" name="password" id="passKey" value="">
+        <button type="button">Submit</button>
+    </form>
+
+    <script>
+        function verifyPassword() {
+
+            var pw = document.getElementById('passKey').value;
+            var pword = /^([A-Z])$/;
+            if (pword.match(pw)){
+                document.getElementById('message').innerHTML='correct';
+            }else{
+                document.getElementById('message').innerHTML='not correct';
+                return false;
+            }
+            
+        }
+    </script>
+</body>
+
+</html> 

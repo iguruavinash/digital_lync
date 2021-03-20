@@ -89,13 +89,16 @@
                 } else {
                     document.getElementById('errorMsg').innerHTML = "Incorrect Details";
                 }
+
+                users.push({
+                    
+                });
                 localStorage.setItem('user', JSON.stringify(users));
                 user.push(users);
                 // sessionStorage.setItem('user', JSON.stringify(users));
                 // user.push(users);
                 var showData = localStorage.getItem('user');
-
-                // console.log(showUser);
+                console.log(showUser);
             }
         </script>
 </body>

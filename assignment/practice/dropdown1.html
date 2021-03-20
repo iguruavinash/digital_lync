@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="dropdown1.css">
+</head>
+
+<body>
+    <div style="padding-top: 30px;">
+        <div class="container">
+            <div class="row">
+                <div id="mobilePhones" style="text-align: center; padding-top: 20px;">
+                    <select id="mySelect" onchange="myFunction()" style="font-size: 30px;">
+                        <option selected>Click for Mobiles...</option>
+                        <option value="Redmi">Redmi</option>
+                        <option value="Nokia">Nokia</option>
+                        <option value="Microsoft">Microsoft</option>
+                        <option value="Apple">Apple</option>
+                    </select>
+                    <select id="selectPrice" onchange="myFunc()" style="font-size: 30px;">
+                        <option selected>Click for Price...</option>
+                        <option value="14,999">14,999</option>
+                        <option value="12,999">12,999</option>
+                        <option value="15,999">15,999</option>
+                        <option value="99,999">99,999</option>
+                    </select>
+                </div>
+                <div class="row" style="padding-top: 15px;">
+                    <div class="col">
+                        <div class="row" style="text-align: center; padding-top: 40px;">
+                            <div class="col">
+                                <div class="row">
+                                    <h1 style="float: right;">Name: </h1>
+                                    <h1 style="float: right;">Price: </h1>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <h2 id="name" style="padding-top: 10px;  "></h2>
+                                <h2 id="price" style="padding-top: 10px;  "></h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="row" style="padding-top: 40px;">
+                            <div class="col">
+                                <button id="removeItem" class="btn btn-danger" style="font-size: 20px;">Delete</button>
+                            </div>
+                            <div class="col" style="padding-bottom: 10px;">
+                                <div class="row" style="padding-top: 10px;">
+                                    <div class="col">
+                                        <h4>Mobile: </h4>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" id="addName">
+                                    </div>
+                                    <div class="col">
+                                        <h4>Price: </h4>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" id="addPrice">
+                                    </div>
+                                </div>
+                                <button id="addItem" class="btn btn-success" style="font-size: 25px;">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function myFunction() {
+            var mobiles = document.getElementById("mySelect").value;
+            document.getElementById("name").innerHTML = mobiles;
+        }
+        function myFunc() {
+            var price = document.getElementById("selectPrice").value;
+            document.getElementById("price").innerHTML = price;
+        }
+        function addItem() {
+            var select = document.getElementById("mySelect");
+            var addMobile = document.getElementById("addMobile");
+            var option = document.createElement("option");
+            option.setAttribute('id', addMobile.value);
+            option.appendChild(document.createTextNode(addMobile.value));
+            select.appendChild(option);
+        }
+
+        function removeItem() {
+            var option = document.getElementById("mySelect");
+            var addName = document.getElementById("addName");
+            var item = document.getElementById(addName.value);
+            option.removeChild(item);
+        }
+    </script>
+
+</body>
+
+</html>
